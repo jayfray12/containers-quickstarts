@@ -28,5 +28,11 @@ ENV BASH_ENV=/usr/share/container-scripts/scl_enable \
     PROMPT_COMMAND="./usr/share/container-scripts/scl_enable" \
     LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8
+    
+RUN curl -fsSL -o /tmp/get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+
+RUN chmod 700 /tmp/get_helm.sh
+
+RUN /tmp/get_helm.sh
 
 USER 1001
